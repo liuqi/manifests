@@ -8,19 +8,23 @@ resources:
 namespace: auth
 
 vars:
-- name: DEX_SERVICE
+- fieldref:
+    fieldPath: metadata.name
+  name: DEX_SERVICE
   objref:
+    apiVersion: v1
     kind: Service
     name: dex
-    apiVersion: v1
-  fieldref:
-    fieldpath: metadata.name
-- name: DEX_NAMESPACE
+- fieldref:
+    fieldPath: metadata.namespace
+  name: DEX_NAMESPACE
   objref:
+    apiVersion: v1
     kind: Service
     name: dex
-    apiVersion: v1
-  fieldref:
-    fieldpath: metadata.namespace
 configurations:
 - params.yaml
+images:
+- name: quay.io/dexidp/dex
+  newName: harbor-repo.vmware.com/mlops/dex
+  newTag: v2.24.0

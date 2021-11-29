@@ -2,9 +2,12 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: kubeflow
 resources:
-  - ../../base
-  - kubeflow-training-roles.yaml
+- ../../base
+- kubeflow-training-roles.yaml
 images:
-  - name: kubeflow/training-operator
-    newName: public.ecr.aws/j1r0q0g6/training/training-operator
-    newTag: "760ac1171dd30039a7363ffa03c77454bd714da5"
+- name: kubeflow/training-operator
+  newName: public.ecr.aws/j1r0q0g6/training/training-operator
+  newTag: 760ac1171dd30039a7363ffa03c77454bd714da5
+- name: public.ecr.aws/j1r0q0g6/training/training-operator:760ac1171dd30039a7363ffa03c77454bd714da5
+  newName: harbor-repo.vmware.com/mlops/training-operator
+  newTag: v1.0-kubeflow-kubeflow-training

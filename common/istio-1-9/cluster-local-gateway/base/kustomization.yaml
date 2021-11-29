@@ -10,3 +10,7 @@ resources:
 
 patchesStrategicMerge:
 - patches/remove-pdb.yaml
+images:
+- name: docker.io/istio/proxyv2
+  newName: harbor-repo.vmware.com/mlops/istio-proxyv2
+  newTag: 1.9.6

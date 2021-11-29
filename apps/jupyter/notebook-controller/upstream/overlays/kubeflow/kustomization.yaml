@@ -6,8 +6,12 @@ namespace: kubeflow
 patchesStrategicMerge:
 - patches/remove-namespace.yaml
 configMapGenerator:
-- name: config
-  behavior: merge
+- behavior: merge
   literals:
   - USE_ISTIO=true
   - ISTIO_GATEWAY=kubeflow/kubeflow-gateway
+  name: config
+images:
+- name: public.ecr.aws/j1r0q0g6/notebooks/notebook-controller:v1.4
+  newName: harbor-repo.vmware.com/mlops/notebook-controller
+  newTag: v1.4

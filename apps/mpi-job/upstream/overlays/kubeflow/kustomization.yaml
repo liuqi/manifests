@@ -4,11 +4,14 @@ resources:
 - ../../base
 namespace: kubeflow
 commonLabels:
-  kustomize.component: mpi-operator
   app: mpi-operator
-  app.kubernetes.io/name: mpi-operator
   app.kubernetes.io/component: mpijob
+  app.kubernetes.io/name: mpi-operator
+  kustomize.component: mpi-operator
 images:
 - name: mpioperator/mpi-operator
   newName: mpioperator/mpi-operator
+  newTag: 0.3.0
+- name: mpioperator/mpi-operator:latest
+  newName: harbor-repo.vmware.com/mlops/mpi-operator
   newTag: 0.3.0

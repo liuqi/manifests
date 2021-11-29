@@ -8,10 +8,14 @@ resources:
 namespace: kubeflow
 
 commonLabels:
-  kustomize.component: centraldashboard
   app: centraldashboard
   app.kubernetes.io/component: centraldashboard
   app.kubernetes.io/name: centraldashboard
+  kustomize.component: centraldashboard
 
 configurations:
 - params.yaml
+images:
+- name: public.ecr.aws/j1r0q0g6/notebooks/central-dashboard:v1.4
+  newName: harbor-repo.vmware.com/mlops/centraldashboard
+  newTag: v1.4-kubeflow-centraldashboard
