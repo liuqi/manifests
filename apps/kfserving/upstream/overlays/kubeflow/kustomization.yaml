@@ -46,3 +46,17 @@ configMapGenerator:
 
 configurations:
 - params.yaml
+images:
+- name: docker.io/istio/proxyv2:1.9.6
+  newName: harbor-repo.vmware.com/mlops/istio-proxyv2
+  newTag: 1.9.6
+- name: gcr.io/kubebuilder/kube-rbac-proxy
+  newName: harbor-repo.vmware.com/mlops/kube-rbac-proxy
+  newTag: v0.4.0
+- name: kfserving/kfserving-controller
+  newName: harbor-repo.vmware.com/mlops/kfserving-controller
+  newTag: v0.6.1
+- name: kfserving/models-web-app
+  newName: harbor-repo.vmware.com/mlops/models-web-app
+  newTag: v0.6.1
+
