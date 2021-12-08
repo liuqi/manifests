@@ -16,3 +16,13 @@ patches:
 - path: patches/crd-preserve-unknown-fields.yaml
   target:
     kind: CustomResourceDefinition
+images:
+- name: quay.io/jetstack/cert-manager-cainjector
+  newName: harbor-repo.vmware.com/mlops/cert-manager-cainjector
+  newTag: v1.3.1
+- name: quay.io/jetstack/cert-manager-controller
+  newName: harbor-repo.vmware.com/mlops/cert-manager-controller
+  newTag: v1.3.1
+- name: quay.io/jetstack/cert-manager-webhook
+  newName: harbor-repo.vmware.com/mlops/cert-manager-webhook
+  newTag: v1.3.1

@@ -9,3 +9,7 @@ commonLabels:
   kustomize.component: tensorboards-web-app
 configurations:
 - params.yaml
+images:
+- name: public.ecr.aws/j1r0q0g6/notebooks/tensorboards-web-app:v1.4
+  newName: harbor-repo.vmware.com/mlops/tensorboards-web-app
+  newTag: v1.4

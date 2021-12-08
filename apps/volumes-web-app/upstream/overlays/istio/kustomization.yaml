@@ -9,3 +9,7 @@ commonLabels:
   kustomize.component: volumes-web-app
 configurations:
 - params.yaml
+images:
+- name: public.ecr.aws/j1r0q0g6/notebooks/volumes-web-app:v1.4
+  newName: harbor-repo.vmware.com/mlops/volumes-web-app
+  newTag: v1.4
